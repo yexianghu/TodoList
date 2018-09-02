@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/group_today"
+            android:icon="@drawable/ic_group_today"
+            android:title="@string/drawer_group_item_today" />
+        <item
+            android:id="@+id/group_important"
+            android:icon="@drawable/ic_group_important"
+            android:title="@string/drawer_group_item_important" />
+        <item
+            android:id="@+id/group_todo"
+            android:icon="@drawable/ic_group_todo"
+            android:title="@string/drawer_group_item_todo" />
+    </group>
+
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/custom_groups"/>
+</menu>
