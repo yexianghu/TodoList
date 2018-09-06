@@ -38,12 +38,12 @@ class DataBaseTest {
         val insertCount = 100
         for (i in 1..insertCount) {
             val group = GroupElement()
-            group.title = "title${i}"
+            group.title = "title$i"
             group.showDone = false
             dao.addGroup(group)
         }
 
-        var needRemove = true;
+        var needRemove = true
         for (group in dao.getGroup()) {
             if (needRemove) {
                 dao.removeGroup(group)

@@ -29,6 +29,9 @@ class GroupsViewModel : ViewModel() {
         }
     }
 
+    fun addGroup(title:String) {
+
+    }
     override fun onCleared() {
         super.onCleared()
     }

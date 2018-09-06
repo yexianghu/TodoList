@@ -20,13 +20,26 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/drawer_menu_icon_tint"
+        app:itemTextColor="#000000"
         app:menu="@menu/activity_main_drawer" >
-        <TextView
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/new_list"
+            android:clickable="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?android:attr/android:listPreferredItemHeightSmall"
             android:layout_gravity="bottom"
-            android:textSize="18sp"
-            android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            android:gravity="center|start"
+            android:drawableStart="@drawable/ic_group_add"
+            android:drawableTint="@color/drawer_menu_icon_normal"
+            android:text="@string/drawer_group_new_list"
+            android:textColor="@color/drawer_menu_icon_normal"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingStart="?android:attr/listPreferredItemPaddingLeft"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:drawablePadding="25dp"/>
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

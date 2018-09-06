@@ -25,6 +25,11 @@ class TaskElement {
 @Entity(tableName = "groups")
 class GroupElement {
 
+    constructor(title: String, showDone: Boolean) {
+        this.title = title
+        this.showDone = showDone
+    }
+
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 

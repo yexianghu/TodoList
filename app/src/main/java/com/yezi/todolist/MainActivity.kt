@@ -1,19 +1,25 @@
 package com.yezi.todolist
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
-import androidx.lifecycle.ViewModelProviders
 import com.yezi.todolist.data.Group
 import com.yezi.todolist.ui.GroupsViewModel
+import com.yezi.todolist.ui.createNewListDialog
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -44,6 +50,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         module.load(this).observe(this, Observer<List<Group>> {
             updateGroups(it)
         })
+
+        new_list.setOnClickListener { onNewList() }
     }
 
     private fun updateGroups(groups:List<Group>) {
@@ -105,5 +113,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
+    private fun onNewList() {
+        showNewListDialog()
+    }
+
+    private fun showNewListDialog() {
+        createNewListDialog(this).show()
+    }
 
 }
